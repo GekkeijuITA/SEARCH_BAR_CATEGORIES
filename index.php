@@ -5,20 +5,28 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <style>
+            input[type="radio"]
+            {
+                display: none;
+            }
+            .checked
+            {
+                border-bottom: 2px solid black;
+            }
+        </style>
     </head>
     <body>
-        <form>
-            <!--<select name="category">
-                <option value="category1">Category 1</option>
-                <option value="category2">Category 2</option>
-                <option value="category3">Category 3</option>
-            </select>-->
-            <input type="radio" name="category" value="category1" id="category1">
-            <label for="category1">Category 1</label>
-            <input type="radio" name="category" value="category2" id="category2">
-            <label for="category2">Category 2</label>
-            <input type="radio" name="category" value="category3" id="category3">
-            <label for="category3">Category 3</label>
+        <form onchange="changeCss()">
+            <label>
+                <input type="radio" name="category" value="category1">Category 1
+            </label>
+            <label>
+                <input type="radio" name="category" value="category2">Category 2
+            </label>
+            <label>
+                <input type="radio" name="category" value="category3">Category 3
+            </label>
             <input type="text" class="input-search" id="searchbar" name="searchbar" placeholder="Cerca utenti" onkeyup="searchq();" autocomplete="off">
         </form>   
         <div class="dropdown">
@@ -39,5 +47,12 @@
                 });
             }
         }
+
+        function changeCss()
+        {
+            $("input[type=radio]").parent("label").removeClass("checked");
+            $("input[type=radio]:checked").parent("label").addClass("checked");
+        }
+        
     </script>
 </html>
