@@ -35,11 +35,5 @@
                 ';
             }
         }
-        else
-        {
-            echo '
-                <p class="mt-2">Type smth to search</p>
-            ';
-        }
     } 
 ?>
