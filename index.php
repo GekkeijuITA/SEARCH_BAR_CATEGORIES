@@ -17,7 +17,7 @@
         </style>
     </head>
     <body>
-        <form onchange="changeCss()">
+        <form onchange="changeCss();searchq()">
             <label>
                 <input type="radio" name="category" value="category1">Category 1
             </label>
