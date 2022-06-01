@@ -8,11 +8,17 @@
     </head>
     <body>
         <form>
-            <select name="category">
+            <!--<select name="category">
                 <option value="category1">Category 1</option>
                 <option value="category2">Category 2</option>
                 <option value="category3">Category 3</option>
-            </select>
+            </select>-->
+            <input type="radio" name="category" value="category1" id="category1">
+            <label for="category1">Category 1</label>
+            <input type="radio" name="category" value="category2" id="category2">
+            <label for="category2">Category 2</label>
+            <input type="radio" name="category" value="category3" id="category3">
+            <label for="category3">Category 3</label>
             <input type="text" class="input-search" id="searchbar" name="searchbar" placeholder="Cerca utenti" onkeyup="searchq();" autocomplete="off">
         </form>   
         <div class="dropdown">
@@ -24,7 +30,7 @@
         function searchq()
         {
             var searchTxt = $("input[name='searchbar']").val();
-            var searchCategory = $("select[name='category']").val();
+            var searchCategory = $("input[name='category']:checked").val();
             if(searchTxt != null)
             {
                 $.post("search.php" , {searchVal: searchTxt,category: searchCategory} , function(output)
